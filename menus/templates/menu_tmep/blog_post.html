@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Post</title>
+    <style>
+        /* Inline CSS for styling */
+        .blog-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .blog-description {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .blog-date {
+            font-size: 14px;
+            color: gray;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'partials/header.html' %}
+    <div class="blog-post">
+        <h1 class="blog-title">{{ blogs.title }}</h1>
+        <p class="blog-description">{{ blogs.description }}</p>
+        <p class="blog-date">Written on {{ blogs.date }}</p>
+    </div>
+
+    <div>
+        <form action="{% url 'delete_blog' blogs.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+        <form action="{% url 'edit_blog' blogs.id %}" method="GET">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <button type="submit">Edit</button>
+        </form>
+    </div>
+</body>
+</html>

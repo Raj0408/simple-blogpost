@@ -1,0 +1,32 @@
+/* CSS code for blog post in home.html */
+
+.blog-post {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.blog-post h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.blog-post .author {
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.blog-post .date {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+}

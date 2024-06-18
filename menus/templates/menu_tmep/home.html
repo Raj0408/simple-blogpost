@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Blog App</title>
+</head>
+<body style="font-family: Arial, sans-serif;">
+    <header style="background-color: #f8f9fa; padding: 10px; text-align: center;">
+        <h1 style="margin: 0;">My Blog</h1>
+    </header>
+
+    <main style="margin: 20px;">
+        <article>
+            <h2 style="color: #343a40;">Blog Post Title</h2>
+            <p style="color: #6c757d;">This is a sample blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices.</p>
+        </article>
+
+        <article>
+            <h2 style="color: #343a40;">Another Blog Post Title</h2>
+            <p style="color: #6c757d;">This is another sample blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices.</p>
+        </article>
+    </main>
+
+    <footer style="background-color: #f8f9fa; padding: 10px; text-align: center;">
+        <p style="margin: 0;">&copy; 2022 My Blog</p>
+    </footer>
+</body>
+</html> -->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    
+</head>
+<body style="display: flex; flex-direction:column;">
+   
+    <header style="width: 100%;">
+        {% include 'partials/header.html' %}
+    </header>
+    <div  style="display: flex; justify-content: space-between; flex-grow: 1;">
+    <main style="flex: 1; margin-right: 20px;">
+    {%for post in doc.blogs%}
+        <article>
+           <a href="{% url 'blog' post.id %}"> <h2 style="color: #343a40;">{{post.title}}</h2></a>
+            <p style="color: #6c757d;">{{post.description}}</p>
+        </article>
+   
+    {%endfor%}
+    
+</main>
+<form action="" method="post" style="position: absolute; top: 170px; right: 0; max-width: 500px; margin: auto; background-color: #f8f9fa; border-radius: 5px;">
+    {%csrf_token %}
+    <table style="width: 100%; margin-bottom: 20px;">
+        {{ doc.form.as_p}}
+    </table>
+
+    <input type="submit" value="Submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+</form>
+</div>
+    
+    
+    
+
+    
+</body>
+</html>
