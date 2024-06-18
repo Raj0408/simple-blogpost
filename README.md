@@ -9,8 +9,18 @@ This application is a simple blog post platform built with Django. It allows use
 - View list of all posts
 - Post detail view with comments
 
-## Installation
+## Quick Start
+- **Clone**: `git clone https://github.com/your-username/django-blogpost-app.git`
+- **Setup**: `cd django-blogpost-app && pip install -r requirements.txt && python manage.py migrate`
+- **Run**: `python manage.py runserver`
+- **View**: Open `http://127.0.0.1:8000/`
 
-To get this project up and running, you'll need to follow these steps:
+## Features
+- User accounts, post CRUD, comments
 
-1. Clone the repository:
+## Contribute
+Fork, add features, and PR!
+
+## License
+[MIT](LICENSE)
+
